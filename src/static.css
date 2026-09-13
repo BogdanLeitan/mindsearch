@@ -447,9 +447,8 @@ html.sidebar-collapsed .thread-title,
   z-index: 15;
 }
 .followup-inner { width: 100%; }
-
-.ask-box.compact { width: 100%; max-width: none; padding: 11px 12px 9px; gap: 8px; border-radius: 16px; }
-.ask-box.compact .ask-input { height: 26px; font-size: 14.5px; }
+.followup-dock .ask-area { max-width: none; }
+.followup-dock .ask-promos { display: none; }
 
 .model-btn.static { cursor: default; }
 .model-btn.static:hover { background: none; color: var(--text-2); }

@@ -7,27 +7,28 @@
    ============================================================ */
 
 .pf-wrap {
-  --c-nvda: #7cc9bd;
-  --c-avgo: #e0a183;
-  --c-msft: #7db8dd;
-  --c-aapl: #d8c076;
-  --c-googl: #ab9ce0;
-  --c-amzn: #d795b4;
-  --c-meta: #7fd0a5;
-  --c-tsm: #a9b4bd;
-  --c-asml: #c2b280;
-  --c-tsla: #d795b4;
-  --c-semi: #7cc9bd;
-  --c-inet: #ab9ce0;
-  --c-soft: #7db8dd;
-  --c-ce: #d8c076;
-  --c-eqp: #e0a183;
-  --c-auto: #d795b4;
-  --c-us: #7db8dd;
-  --c-tw: #e0a183;
-  --c-nl: #d8c076;
+  --c-nvda: #8fb0c4;
+  --c-avgo: #84a4b8;
+  --c-msft: #7998ac;
+  --c-aapl: #6e8ca0;
+  --c-googl: #638094;
+  --c-amzn: #587488;
+  --c-meta: #4d687c;
+  --c-tsm: #425c70;
+  --c-asml: #375064;
+  --c-tsla: #2d4558;
+  --c-semi: #8fb0c4;
+  --c-inet: #7998ac;
+  --c-soft: #638094;
+  --c-ce: #4d687c;
+  --c-eqp: #375064;
+  --c-auto: #2d4558;
+  --c-us: #8fb0c4;
+  --c-tw: #587488;
+  --c-nl: #2d4558;
+  width: min(1180px, 100%);
   max-width: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 22px 30px 56px;
 }
 
@@ -37,8 +38,8 @@
 .pf-kpis {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: 14px;
+  margin-bottom: 20px;
 }
 .pf-kpi {
   padding: 16px 18px;
@@ -65,8 +66,8 @@
 .pf-stage {
   display: grid;
   grid-template-columns: 440px minmax(0, 1fr);
-  gap: 14px;
-  margin-bottom: 14px;
+  gap: 16px;
+  margin-bottom: 20px;
   align-items: stretch;
 }
 
@@ -79,7 +80,7 @@
 }
 
 .pf-chart-card {
-  padding: 18px 20px 20px;
+  padding: 16px 20px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,13 +94,13 @@
 
 .pf-donut-wrap {
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 232px;
+  height: 232px;
   margin: auto;
 }
 .pf-donut {
-  width: 260px;
-  height: 260px;
+  width: 232px;
+  height: 232px;
   border-radius: 50%;
 }
 .pf-donut-hold {
@@ -129,7 +130,7 @@
   gap: 2px;
 }
 .pf-hole strong {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 600;
   letter-spacing: -.03em;
   color: var(--text-1);
@@ -137,7 +138,7 @@
 .pf-hole span { font-size: 11.5px; color: var(--text-3); }
 
 .pf-chart-card h2 { align-self: flex-start; }
-.pf-comp-head { padding: 16px 18px 4px; }
+.pf-comp-head { padding: 14px 18px 3px; }
 .pf-comp-head h2 {
   font-size: 14px;
   font-weight: 600;
@@ -151,7 +152,7 @@
   align-items: center;
 }
 .pf-cols {
-  padding: 8px 18px 8px;
+  padding: 6px 18px 6px;
   font-size: 11.5px;
   font-weight: 500;
   color: var(--text-3);
@@ -161,7 +162,7 @@
 .pf-w, .pf-gl { text-align: right; }
 
 .pf-row {
-  padding: 11px 18px;
+  padding: 9px 18px;
   border-top: 1px solid var(--border-soft);
   transition: background .12s ease;
 }
@@ -172,8 +173,8 @@
 .pf-pill {
   display: flex;
   align-items: center;
-  gap: 10px;
-  height: 34px;
+  gap: 9px;
+  height: 31px;
   padding: 0 12px 0 4px;
   border-radius: 999px;
   background: var(--bg-pill);
@@ -195,8 +196,8 @@
 .pf-pill.w-asml { width: 30.6%; }
 .pf-pill.w-tsla { width: 26.3%; }
 .pf-logo-img {
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   padding: 3px;
   border-radius: 50%;
   background: #fff;
@@ -233,7 +234,7 @@
 .pf-splits {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 16px;
 }
 .pf-split {
   background: var(--bg-card);

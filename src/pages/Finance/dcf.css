@@ -27,6 +27,12 @@
   background: color-mix(in srgb, var(--up) 78%, #c4a35a);
 }
 
+.dcf-h61 { height: 61%; }
+.dcf-h72 { height: 72%; }
+.dcf-h83 { height: 83%; }
+.dcf-h93 { height: 93%; }
+.dcf-h100 { height: 100%; }
+
 .dcf-bar .bar-val {
   font-size: 12px;
   font-weight: 600;

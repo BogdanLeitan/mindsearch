@@ -4,21 +4,49 @@
     display: none;
 }
 
+.ask-file {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ask-area {
+    width: 100%;
+    max-width: 720px;
+}
+
 .ask-box {
-    width: 638px;
-    max-width: 100%;
+    width: 100%;
     background: var(--bg-input);
     border: 1px solid var(--border);
-    border-radius: var(--r-lg);
-    padding: 15px 15px 12px;
+    border-radius: 14px;
+    padding: 14px 14px 11px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    transition: border-color .15s ease;
+    gap: 10px;
+    transition: border-color .32s ease, box-shadow .32s ease;
 }
 
 .ask-box:focus-within {
     border-color: var(--border-strong);
+}
+
+#mode-deep:checked ~ .ask-box {
+    border-color: rgba(111, 147, 176, .42);
+    box-shadow:
+        0 0 0 1px rgba(111, 147, 176, .22),
+        0 0 18px rgba(111, 147, 176, .22),
+        0 0 42px rgba(89, 125, 155, .16);
+}
+
+#mode-deep:checked ~ .ask-box:focus-within {
+    border-color: rgba(111, 147, 176, .55);
+    box-shadow:
+        0 0 0 1px rgba(111, 147, 176, .3),
+        0 0 22px rgba(111, 147, 176, .28),
+        0 0 52px rgba(89, 125, 155, .2);
 }
 
 .ask-input {
@@ -28,9 +56,9 @@
     outline: none;
     resize: none;
     color: var(--text-1);
-    font-size: 17px;
-    line-height: 1.5;
-    height: 55px;
+    font-size: 15px;
+    line-height: 1.45;
+    height: 42px;
 }
 
 .ask-input::placeholder {
@@ -52,13 +80,14 @@
 }
 
 .round-btn {
-    width: 33px;
-    height: 33px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     color: var(--text-3);
+    cursor: pointer;
     transition: background .12s ease, color .12s ease;
 }
 
@@ -67,73 +96,63 @@
     color: var(--text-1);
 }
 
-/* Mode dropdown: Search / Research / Finance / Academics */
-.mode-btn {
-    border: 1px solid var(--border-soft);
-    background: var(--ink-faint);
-    padding: 5px 10px;
-    font-size: 13px;
-    gap: 5px;
-}
-
-.mode-current::after {
-    content: "Search";
-}
-
-#mode-search:checked~.ask-box .mode-current::after {
-    content: "Search";
-}
-
-#mode-research:checked~.ask-box .mode-current::after {
-    content: "Research";
-}
-
-#mode-finance:checked~.ask-box .mode-current::after {
-    content: "Finance";
-}
-
-#mode-academic:checked~.ask-box .mode-current::after {
-    content: "Academics";
-}
-
-#mode-search:checked~.ask-box label[for="mode-search"],
-#mode-research:checked~.ask-box label[for="mode-research"],
-#mode-finance:checked~.ask-box label[for="mode-finance"],
-#mode-academic:checked~.ask-box label[for="mode-academic"] {
-    color: var(--text-1);
-    background: var(--hover);
-}
-
-.mode-ico {
-    display: none;
-    align-items: center;
-}
-
-#mode-search:checked~.ask-box .mode-ico.i-search,
-#mode-research:checked~.ask-box .mode-ico.i-research,
-#mode-finance:checked~.ask-box .mode-ico.i-finance,
-#mode-academic:checked~.ask-box .mode-ico.i-academic {
+.ask-switch {
+    position: relative;
     display: flex;
-}
-
-.mode-menu {
-    width: 206px;
-    padding: 4px;
-    border-radius: 12px;
-}
-
-.mode-menu .dd-item {
-    padding: 6px 8px;
+    align-items: stretch;
+    width: max-content;
+    height: 30px;
+    padding: 0;
+    border: 1px solid var(--border-soft);
     border-radius: 8px;
-    font-size: 13.5px;
+    background: var(--ink-faint);
+    overflow: hidden;
 }
 
-.mode-menu .dd-item .dd-left {
-    gap: 8px;
+.switch-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40.5%;
+    height: 100%;
+    background: var(--bg-pill);
+    border-radius: 7px;
+    pointer-events: none;
+    transition:
+        left .32s cubic-bezier(.22, .8, .28, 1),
+        width .32s cubic-bezier(.22, .8, .28, 1);
 }
 
-.mode-menu .dd-text small {
-    font-size: 11px;
+#mode-deep:checked ~ .ask-box .switch-thumb {
+    left: 40.5%;
+    width: 59.5%;
+}
+
+.switch-btn {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 100%;
+    padding: 0 8px;
+    border-radius: 0;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text-3);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color .28s ease;
+}
+
+.switch-btn:hover {
+    color: var(--text-1);
+}
+
+#mode-search:checked ~ .ask-box .switch-search,
+#mode-deep:checked ~ .ask-box .switch-deep {
+    color: var(--text-1);
 }
 
 .dd-menu.left {
@@ -167,10 +186,10 @@
 .model-btn {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 11px;
+    gap: 5px;
+    padding: 5px 10px;
     border-radius: 999px;
-    font-size: 13.5px;
+    font-size: 12.5px;
     font-weight: 500;
     color: var(--text-2);
     cursor: pointer;
@@ -346,8 +365,8 @@
 }
 
 .send-btn {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -360,4 +379,73 @@
 .send-btn:hover {
     background: var(--send-hover);
     transform: translateY(-1px);
+}
+
+.ask-promos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.ask-promo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .12s ease, opacity .12s ease;
+}
+
+.ask-promo:hover {
+    transform: translateY(-1px);
+}
+
+.ask-promo strong {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -.02em;
+}
+
+.ask-promo span {
+    font-size: 12.5px;
+    line-height: 1.4;
+    opacity: .82;
+}
+
+.ask-promo em {
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, .14);
+}
+
+.promo-search {
+    background: linear-gradient(145deg, #6f93b0 0%, #597d9b 46%, #3d5a70 100%);
+    color: #f4f7f6;
+}
+
+.promo-deep {
+    background: linear-gradient(165deg, #2a3844 0%, #1c2329 48%, #15181b 100%);
+    color: #ecece8;
+}
+
+.promo-deep span {
+    color: rgba(236, 236, 232, .62);
+    opacity: 1;
+}
+
+
+
+@media (max-width: 640px) {
+    .ask-promos {
+        grid-template-columns: 1fr;
+    }
 }

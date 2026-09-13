@@ -442,9 +442,7 @@ html:has(#theme-system:checked) .set-theme-name::after { content: "System"; }
 .set-pills label:hover { color: var(--text-1); }
 
 .set-modal:has(#set-mode-search:checked) label[for="set-mode-search"],
-.set-modal:has(#set-mode-research:checked) label[for="set-mode-research"],
-.set-modal:has(#set-mode-finance:checked) label[for="set-mode-finance"],
-.set-modal:has(#set-mode-academic:checked) label[for="set-mode-academic"],
+.set-modal:has(#set-mode-deep:checked) label[for="set-mode-deep"],
 html:has(#theme-dark:checked) .set-theme-pills label[for="theme-dark"],
 html:has(#theme-light:checked) .set-theme-pills label[for="theme-light"],
 html:has(#theme-system:checked) .set-theme-pills label[for="theme-system"] {

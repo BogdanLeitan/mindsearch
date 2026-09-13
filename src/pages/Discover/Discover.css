@@ -3,6 +3,7 @@
    ============================================================ */
 
 .disc-radio,
+.disc-save,
 .topics-toggle {
   position: absolute;
   opacity: 0;
@@ -12,9 +13,13 @@
 }
 
 .discover-wrap {
-  max-width: 1040px;
+  width: min(1220px, 100%);
   margin: 0 auto;
   padding: 22px var(--page-gutter) 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: 28px;
+  align-items: start;
 }
 
 /* Shared favicon dots */
@@ -124,10 +129,12 @@ html.sidebar-collapsed .discover-head .ph-title {
 }
 .discover-head .ph-link { cursor: pointer; }
 
-#disc-topic-all:checked ~ .discover-head .ph-link[for="disc-topic-all"] {
+#disc-topic-all:checked ~ .discover-head .ph-link[for="disc-topic-all"],
+#disc-topic-saved:checked ~ .discover-head .ph-link[for="disc-topic-saved"] {
   color: var(--text-1);
 }
 #disc-topic-all:checked ~ .discover-head .ph-link[for="disc-topic-all"]::after,
+#disc-topic-saved:checked ~ .discover-head .ph-link[for="disc-topic-saved"]::after,
 #disc-topic-markets:checked ~ .discover-head .topics-btn::after,
 #disc-topic-tech:checked ~ .discover-head .topics-btn::after,
 #disc-topic-crypto:checked ~ .discover-head .topics-btn::after,
@@ -260,20 +267,31 @@ html.sidebar-collapsed .discover-head .ph-title {
 .disc-feed {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 22px;
   padding-top: 16px;
+  width: 100%;
+  max-width: 792px;
+  min-width: 0;
 }
 
 .fy-feature {
   display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 36px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
   align-items: center;
+  min-width: 0;
+  overflow: hidden;
 }
-.fy-feature.reverse { grid-template-columns: 1.05fr 1fr; }
+.fy-feature.reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.fy-copy {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
 .fy-photo {
-  height: 250px;
-  border-radius: 16px;
+  width: 100%;
+  max-width: 100%;
+  height: 228px;
+  border-radius: 14px;
   overflow: hidden;
 }
 .fy-photo img,
@@ -284,33 +302,34 @@ html.sidebar-collapsed .discover-head .ph-title {
   display: block;
 }
 .fy-title {
-  font-size: 32px;
+  font-size: 1.75rem;
   font-weight: 500;
   letter-spacing: -.03em;
-  line-height: 1.18;
+  line-height: 1.22;
   color: var(--text-1);
+  overflow-wrap: break-word;
 }
 .fy-title.teal { color: var(--teal); }
 .fy-pub {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top: 12px;
-  font-size: 13px;
+  margin-top: 8px;
+  font-size: 12px;
   color: var(--text-3);
 }
 .fy-snippet {
-  margin-top: 12px;
-  font-size: 15.5px;
-  line-height: 1.5;
+  margin-top: 8px;
+  font-size: 13.5px;
+  line-height: 1.45;
   color: var(--text-2);
-  max-width: 42ch;
+  overflow-wrap: break-word;
 }
 .fy-foot {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 10px;
   font-size: 12.5px;
   color: var(--text-3);
 }
@@ -329,22 +348,67 @@ html.sidebar-collapsed .discover-head .ph-title {
 }
 .fy-card .fy-actions { margin-top: 0; }
 
+.fy-save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  cursor: pointer;
+}
+.fy-save:hover { color: var(--text-1); }
+
+#save-nvda:checked ~ .content label[for="save-nvda"],
+#save-apple:checked ~ .content label[for="save-apple"],
+#save-btc:checked ~ .content label[for="save-btc"],
+#save-sov:checked ~ .content label[for="save-sov"],
+#save-fed:checked ~ .content label[for="save-fed"],
+#save-oil:checked ~ .content label[for="save-oil"],
+#save-openai:checked ~ .content label[for="save-openai"],
+#save-chip:checked ~ .content label[for="save-chip"] {
+  color: #e26d6d;
+}
+#save-nvda:checked ~ .content label[for="save-nvda"] svg,
+#save-apple:checked ~ .content label[for="save-apple"] svg,
+#save-btc:checked ~ .content label[for="save-btc"] svg,
+#save-sov:checked ~ .content label[for="save-sov"] svg,
+#save-fed:checked ~ .content label[for="save-fed"] svg,
+#save-oil:checked ~ .content label[for="save-oil"] svg,
+#save-openai:checked ~ .content label[for="save-openai"] svg,
+#save-chip:checked ~ .content label[for="save-chip"] svg {
+  fill: currentColor;
+}
+
 .fy-trio {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
+  width: 100%;
 }
 .fy-card {
+  width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   background: var(--bg-card);
   border: 1px solid var(--border-soft);
   border-radius: 16px;
   overflow: hidden;
-  min-height: 100%;
 }
 .fy-card:hover { border-color: var(--border); background: var(--bg-card-hover); }
-.fy-card-img { height: 168px; overflow: hidden; }
+.fy-card-img {
+  width: 100%;
+  height: 156px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.fy-card > a {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  color: inherit;
+}
+.fy-feature a { color: inherit; }
 .fy-card h3 {
   padding: 12px 14px 0;
   font-size: 16px;
@@ -361,26 +425,180 @@ html.sidebar-collapsed .discover-head .ph-title {
 .fy-card .src-stack .favicon { border-color: var(--bg-card); }
 .fy-card:hover .src-stack .favicon { border-color: var(--bg-card-hover); }
 
-#disc-topic-markets:checked ~ .content .fy-card:not(.t-markets),
-#disc-topic-markets:checked ~ .content .fy-feature:not(.t-markets),
-#disc-topic-tech:checked ~ .content .fy-card:not(.t-tech),
-#disc-topic-tech:checked ~ .content .fy-feature:not(.t-tech),
-#disc-topic-crypto:checked ~ .content .fy-card:not(.t-crypto),
-#disc-topic-crypto:checked ~ .content .fy-feature:not(.t-crypto),
-#disc-topic-macro:checked ~ .content .fy-card:not(.t-macro),
-#disc-topic-macro:checked ~ .content .fy-feature:not(.t-macro),
-#disc-topic-companies:checked ~ .content .fy-card:not(.t-companies),
-#disc-topic-companies:checked ~ .content .fy-feature:not(.t-companies) {
+#disc-topic-markets:checked ~ .content .disc-feed .fy-card:not(.t-markets),
+#disc-topic-markets:checked ~ .content .disc-feed .fy-feature:not(.t-markets),
+#disc-topic-tech:checked ~ .content .disc-feed .fy-card:not(.t-tech),
+#disc-topic-tech:checked ~ .content .disc-feed .fy-feature:not(.t-tech),
+#disc-topic-crypto:checked ~ .content .disc-feed .fy-card:not(.t-crypto),
+#disc-topic-crypto:checked ~ .content .disc-feed .fy-feature:not(.t-crypto),
+#disc-topic-macro:checked ~ .content .disc-feed .fy-card:not(.t-macro),
+#disc-topic-macro:checked ~ .content .disc-feed .fy-feature:not(.t-macro),
+#disc-topic-companies:checked ~ .content .disc-feed .fy-card:not(.t-companies),
+#disc-topic-companies:checked ~ .content .disc-feed .fy-feature:not(.t-companies) {
   display: none;
+}
+
+.disc-saved { display: none; }
+
+#disc-topic-saved:checked ~ .content .discover-wrap {
+  grid-template-columns: minmax(0, 1fr);
+}
+#disc-topic-saved:checked ~ .content .disc-feed,
+#disc-topic-saved:checked ~ .content .disc-rail {
+  display: none;
+}
+#disc-topic-saved:checked ~ .content .disc-saved {
+  display: block;
+}
+
+.disc-saved-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.disc-saved .sv-item { display: none; }
+
+#save-nvda:checked ~ .content .sv-nvda,
+#save-apple:checked ~ .content .sv-apple,
+#save-btc:checked ~ .content .sv-btc,
+#save-sov:checked ~ .content .sv-sov,
+#save-fed:checked ~ .content .sv-fed,
+#save-oil:checked ~ .content .sv-oil,
+#save-openai:checked ~ .content .sv-openai,
+#save-chip:checked ~ .content .sv-chip {
+  display: flex;
+}
+
+.disc-saved-empty {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  text-align: center;
+  gap: 8px;
+}
+.disc-saved-empty p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-1);
+}
+.disc-saved-empty span {
+  font-size: 13.5px;
+  color: var(--text-3);
+}
+
+#disc-topic-saved:checked ~ .content .disc-saved-empty { display: flex; }
+#save-nvda:checked ~ .content .disc-saved-empty,
+#save-apple:checked ~ .content .disc-saved-empty,
+#save-btc:checked ~ .content .disc-saved-empty,
+#save-sov:checked ~ .content .disc-saved-empty,
+#save-fed:checked ~ .content .disc-saved-empty,
+#save-oil:checked ~ .content .disc-saved-empty,
+#save-openai:checked ~ .content .disc-saved-empty,
+#save-chip:checked ~ .content .disc-saved-empty {
+  display: none;
+}
+
+.disc-rail {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+}
+
+.disc-mkt {
+  padding: 2px 16px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 20px;
+}
+
+.disc-mkt-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.disc-mkt-item {
+  position: relative;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.disc-mkt-item label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 2px;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -.015em;
+  color: var(--text-1);
+  cursor: pointer;
+}
+
+.disc-mkt-chev {
+  width: 14px;
+  height: 14px;
+  margin-left: auto;
+  flex-shrink: 0;
+  margin-top: 2px;
+  background: var(--text-3);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform .15s ease;
+}
+
+.disc-mkt-item p {
+  display: none;
+  padding: 0 18px 13px 2px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.disc-mkt-item input:checked + label .disc-mkt-chev {
+  transform: rotate(180deg);
+}
+
+.disc-mkt-item input:checked + label + p { display: block; }
+
+.disc-mkt-src {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 2px 4px;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.disc-mkt-src .src-stack { display: flex; align-items: center; }
+.disc-mkt-src .favicon {
+  margin-left: -6px;
+  border: 2px solid var(--bg-card);
+}
+.disc-mkt-src .favicon:first-child { margin-left: 0; }
+
+@media (max-width: 1180px) {
+  .discover-wrap { grid-template-columns: minmax(0, 1fr); }
+  .disc-rail { position: static; }
 }
 
 @media (max-width: 900px) {
   .fy-feature,
   .fy-feature.reverse {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
   }
   .fy-feature.reverse .fy-photo { order: -1; }
-  .fy-title { font-size: 26px; }
-  .fy-trio { grid-template-columns: 1fr; }
+  .fy-title { font-size: 1.75rem; }
+  .fy-photo {
+    width: 100%;
+    height: 188px;
+  }
+  .fy-trio,
+  .disc-saved-grid { grid-template-columns: minmax(0, 1fr); }
 }

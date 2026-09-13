@@ -1,11 +1,3 @@
-.nc-cb {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  width: 0;
-  height: 0;
-}
-
 .nc-shell {
   flex: 1;
   min-width: 0;
@@ -16,278 +8,12 @@
   background: var(--bg-page);
 }
 
-.nc-shell:has(#nc-bg-scene:checked) {
-  background:
-    linear-gradient(180deg, rgba(16, 14, 12, .32) 0%, rgba(16, 14, 12, .7) 100%),
-    url("/assets/landing-hero-bg.png") center 40% / cover no-repeat;
-}
-
-.nc-shell:has(#nc-bg-dusk:checked) {
-  background:
-    radial-gradient(ellipse 90% 70% at 18% 0%, rgba(186, 122, 78, .38), transparent 56%),
-    radial-gradient(ellipse 80% 60% at 92% 100%, rgba(58, 78, 92, .4), transparent 52%),
-    linear-gradient(180deg, #2a221c, #151413);
-}
-
-.nc-shell:has(#nc-bg-grove:checked) {
-  background:
-    radial-gradient(ellipse 80% 70% at 12% 18%, rgba(70, 128, 96, .34), transparent 56%),
-    linear-gradient(180deg, #1a2420, #141614);
-}
-
-.nc-shell:has(#nc-bg-ember:checked) {
-  background:
-    radial-gradient(ellipse 70% 50% at 82% 0%, rgba(204, 92, 48, .3), transparent 52%),
-    linear-gradient(180deg, #2a1c18, #161210);
-}
-
-.nc-shell:has(#nc-bg-mist:checked) {
-  background:
-    radial-gradient(ellipse 100% 80% at 50% 0%, rgba(160, 165, 175, .24), transparent 60%),
-    linear-gradient(180deg, #222428, #161618);
-}
-
-html:has(#theme-light:checked) .nc-shell:has(#nc-bg-scene:checked) {
-  background:
-    linear-gradient(180deg, rgba(247, 246, 243, .28) 0%, rgba(247, 246, 243, .62) 100%),
-    url("/assets/landing-hero-bg.png") center 40% / cover no-repeat;
-}
-
-html:has(#theme-light:checked) .nc-shell:has(#nc-bg-dusk:checked) {
-  background:
-    radial-gradient(ellipse 90% 70% at 18% 0%, rgba(210, 150, 100, .28), transparent 56%),
-    linear-gradient(180deg, #f3ebe3, #f7f6f3);
-}
-
-html:has(#theme-light:checked) .nc-shell:has(#nc-bg-grove:checked) {
-  background:
-    radial-gradient(ellipse 80% 70% at 12% 18%, rgba(120, 170, 140, .28), transparent 56%),
-    linear-gradient(180deg, #eef3ef, #f7f6f3);
-}
-
-html:has(#theme-light:checked) .nc-shell:has(#nc-bg-ember:checked) {
-  background:
-    radial-gradient(ellipse 70% 50% at 82% 0%, rgba(220, 130, 90, .26), transparent 52%),
-    linear-gradient(180deg, #f6ece6, #f7f6f3);
-}
-
-html:has(#theme-light:checked) .nc-shell:has(#nc-bg-mist:checked) {
-  background:
-    radial-gradient(ellipse 100% 80% at 50% 0%, rgba(170, 176, 188, .22), transparent 60%),
-    linear-gradient(180deg, #eef0f4, #f7f6f3);
-}
-
-.nc-shell:has(#nc-custom:checked) .head-tools label[for="nc-custom"] {
-  background: var(--bg-pill);
-  color: var(--text-1);
-  border-color: var(--border-strong);
-}
-
-.nc-overlay {
-  display: none;
-  position: absolute;
-  inset: 0;
-  z-index: 40;
-}
-
-.nc-shell:has(#nc-custom:checked) .nc-overlay { display: block; }
-
-.nc-panel {
-  display: none;
-  position: absolute;
-  top: 52px;
-  right: 18px;
-  width: 284px;
-  padding: 14px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  z-index: 50;
-}
-
-.nc-shell:has(#nc-custom:checked) .nc-panel { display: block; }
-
-.nc-panel-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-
-.nc-panel-head strong {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -.02em;
-}
-
-.nc-close {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  color: var(--text-3);
-  cursor: pointer;
-}
-
-.nc-close:hover {
-  background: var(--hover);
-  color: var(--text-1);
-}
-
-.nc-panel-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-2);
-  margin-bottom: 8px;
-}
-
-.nc-bgs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.nc-swatch {
-  height: 56px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.nc-swatch:hover { border-color: var(--border-strong); }
-
-.nc-swatch-none {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-page);
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--text-3);
-}
-
-.nc-swatch-scene {
-  background: url("/assets/landing-hero-bg.png") center 40% / cover no-repeat;
-}
-
-.nc-swatch-dusk {
-  background:
-    radial-gradient(ellipse 90% 70% at 18% 0%, rgba(186, 122, 78, .5), transparent 56%),
-    linear-gradient(180deg, #2a221c, #151413);
-}
-
-.nc-swatch-grove {
-  background:
-    radial-gradient(ellipse 80% 70% at 12% 18%, rgba(70, 128, 96, .5), transparent 56%),
-    linear-gradient(180deg, #1a2420, #141614);
-}
-
-.nc-swatch-ember {
-  background:
-    radial-gradient(ellipse 70% 50% at 82% 0%, rgba(204, 92, 48, .45), transparent 52%),
-    linear-gradient(180deg, #2a1c18, #161210);
-}
-
-.nc-swatch-mist {
-  background:
-    radial-gradient(ellipse 100% 80% at 50% 0%, rgba(160, 165, 175, .35), transparent 60%),
-    linear-gradient(180deg, #222428, #161618);
-}
-
-.nc-shell:has(#nc-bg-none:checked) .nc-swatch-none,
-.nc-shell:has(#nc-bg-scene:checked) .nc-swatch-scene,
-.nc-shell:has(#nc-bg-dusk:checked) .nc-swatch-dusk,
-.nc-shell:has(#nc-bg-grove:checked) .nc-swatch-grove,
-.nc-shell:has(#nc-bg-ember:checked) .nc-swatch-ember,
-.nc-shell:has(#nc-bg-mist:checked) .nc-swatch-mist {
-  border-color: var(--text-1);
-}
-
-.nc-toggle-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 0;
-  border-top: 1px solid var(--border-soft);
-}
-
-.nc-toggle-copy {
-  min-width: 0;
-  flex: 1;
-}
-
-.nc-toggle-copy strong {
-  display: block;
-  font-size: 13.5px;
-  font-weight: 600;
-}
-
-.nc-toggle-copy span {
-  display: block;
-  margin-top: 2px;
-  font-size: 12px;
-  color: var(--text-3);
-}
-
-.nc-switch {
-  width: 40px;
-  height: 24px;
-  flex-shrink: 0;
-  border-radius: 999px;
-  background: var(--bg-pill);
-  border: 1px solid var(--border);
-  position: relative;
-  cursor: pointer;
-}
-
-.nc-knob {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--text-3);
-  transition: transform .16s ease, background .16s ease;
-}
-
-.nc-shell:has(#nc-show-topics:checked) label[for="nc-show-topics"],
-.nc-shell:has(#nc-show-stories:checked) label[for="nc-show-stories"] {
-  background: var(--text-1);
-  border-color: var(--text-1);
-}
-
-.nc-shell:has(#nc-show-topics:checked) label[for="nc-show-topics"] .nc-knob,
-.nc-shell:has(#nc-show-stories:checked) label[for="nc-show-stories"] .nc-knob {
-  transform: translateX(16px);
-  background: var(--bg-card);
-}
-
 .hc-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 48px 28px 56px;
-}
-
-.hc-content::before,
-.hc-content::after {
-  content: "";
-  display: block;
-  width: 100%;
-  flex: 0 0 auto;
-  height: 0;
-  transition: height .55s cubic-bezier(.22, .8, .28, 1);
-}
-
-.nc-shell:not(:has(#nc-show-topics:checked)):not(:has(#nc-show-stories:checked)) .hc-content::before,
-.nc-shell:not(:has(#nc-show-topics:checked)):not(:has(#nc-show-stories:checked)) .hc-content::after {
-  height: 16vh;
 }
 
 .hc-wrap {
@@ -303,10 +29,9 @@ html:has(#theme-light:checked) .nc-shell:has(#nc-bg-mist:checked) {
   padding: 18px 0 26px;
 }
 
-.hc-top .ask-area,
-.hc-content .ask-box {
+.hc-top .ask-area {
   width: 100%;
-  max-width: none;
+  max-width: 720px;
 }
 
 .hc-greet {
@@ -447,13 +172,6 @@ html:has(#theme-light:checked) .nc-shell:has(#nc-bg-mist:checked) {
     margin .55s cubic-bezier(.22, .8, .28, 1);
 }
 
-.nc-shell:not(:has(#nc-show-topics:checked)) .hc-topics-block,
-.nc-shell:not(:has(#nc-show-stories:checked)) .hc-block {
-  max-height: 0;
-  opacity: 0;
-  margin: 0;
-  pointer-events: none;
-}
 
 .hc-photo {
   height: 112px;
@@ -526,5 +244,4 @@ html:has(#theme-light:checked) .hc-arrow:hover { background: #fff; }
   .hc-story h3 { font-size: 14px; }
   .hc-topic { height: 140px; }
   .hc-title { font-size: 28px; }
-  .nc-panel { right: 12px; left: 12px; width: auto; }
 }
