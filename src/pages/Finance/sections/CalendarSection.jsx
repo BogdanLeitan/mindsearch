@@ -25,7 +25,7 @@ export default function CalendarSection() {
               <label><input type="radio" name="ew-cap" /> Small</label>
             </div>
           </details>
-          <a className="ew-today" href="/insights">Filter by Watchlist</a>
+          <a className="ew-today" href="/calendar">Filter by Watchlist</a>
         </div>
       </div>
       <div className="ew-board">

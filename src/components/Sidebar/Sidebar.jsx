@@ -67,27 +67,6 @@ function Sidebar() {
             Discover
           </Link>
 
-          <NavLink className={({ isActive }) => isActive ? "side-item active" : "side-item"} to="/titans" title="Titans">
-            <span className="side-ico">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="8" r="3.1" />
-                <path d="M5.4 19c.4-3.2 3.2-5 6.6-5s6.2 1.8 6.6 5" />
-              </svg>
-            </span>
-            Titans
-          </NavLink>
-
-          <NavLink className={({ isActive }) => isActive ? "side-item active" : "side-item"} to="/insights" title="Insights">
-            <span className="side-ico ico-bars">
-              <svg width="18" height="18" viewBox="0 0 24 24">
-                <rect x="3.6" y="13.2" width="4.6" height="7.4" rx="2.2" fill="currentColor" />
-                <rect x="9.7" y="8.2" width="4.6" height="12.4" rx="2.2" fill="currentColor" />
-                <rect x="15.8" y="4.4" width="4.6" height="16.2" rx="2.2" fill="currentColor" />
-              </svg>
-            </span>
-            Insights
-          </NavLink>
-
           <NavLink className={({ isActive }) => isActive ? "side-item active" : "side-item"} to="/charting" title="Charting">
             <span className="side-ico">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
@@ -118,15 +97,6 @@ function Sidebar() {
             Transcripts
           </NavLink>
 
-          <NavLink className={({ isActive }) => isActive ? "side-item active" : "side-item"} to="/dcf" title="DCF Calculator">
-            <span className="side-ico">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="4" y="3.4" width="16" height="17.2" rx="2.2" />
-                <path d="M8 8h8M8 12h3M13 12h3M8 16h3M13 16h3" />
-              </svg>
-            </span>
-            DCF
-          </NavLink>
         </nav>
 
         <div className="side-section">

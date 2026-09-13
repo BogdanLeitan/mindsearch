@@ -3,12 +3,9 @@ import MainLayout from './layouts/MainLayout'
 import NewChat from './pages/NewChat/NewChat'
 import Discover from './pages/Discover/Discover'
 import {
-  InsightsPage,
   ChartingPage,
   CalendarPage,
   TranscriptsPage,
-  DcfPage,
-  TitansPage,
 } from './pages/Finance/Finance'
 import Stock from './pages/Finance/Stock'
 import { Answer } from './Static'
@@ -23,17 +20,17 @@ function App() {
           <Route path="/" element={<NewChat />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/discover" element={<Discover />} />
-          <Route path="/insights" element={<InsightsPage />} />
-          <Route path="/titans" element={<TitansPage />} />
           <Route path="/charting" element={<ChartingPage />} />
           <Route path="/calendar" element={<CalendarPage />} />
           <Route path="/transcripts" element={<TranscriptsPage />} />
-          <Route path="/dcf" element={<DcfPage />} />
-          <Route path="/portfolio" element={<Navigate to="/insights" replace />} />
-          <Route path="/finance" element={<Navigate to="/insights" replace />} />
+          <Route path="/insights" element={<Navigate to="/" replace />} />
+          <Route path="/titans" element={<Navigate to="/" replace />} />
+          <Route path="/dcf" element={<Navigate to="/" replace />} />
+          <Route path="/portfolio" element={<Navigate to="/" replace />} />
+          <Route path="/finance" element={<Navigate to="/charting" replace />} />
           <Route path="/finance/:ticker" element={<Stock />} />
-          <Route path="/overview" element={<Navigate to="/insights" replace />} />
-          <Route path="/tools/*" element={<Navigate to="/dcf" replace />} />
+          <Route path="/overview" element={<Navigate to="/" replace />} />
+          <Route path="/tools/*" element={<Navigate to="/" replace />} />
           <Route path="/answer" element={<Answer />} />
           <Route path="/extensions" element={<Navigate to="/" replace />} />
           <Route path="/settings" element={<Navigate to="/" replace />} />

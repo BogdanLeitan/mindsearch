@@ -22,7 +22,7 @@ function Stock() {
         </label>
 
         <nav className="fs-crumb" aria-label="Breadcrumb">
-          <Link to="/insights">Chartum Finance</Link>
+          <Link to="/charting">Chartum Finance</Link>
           <span>›</span>
           <strong>META</strong>
         </nav>

@@ -1,10 +1,7 @@
 import "./Finance.css"
-import InsightsSection from "./sections/InsightsSection"
 import ChartingSection from "./sections/ChartingSection"
 import CalendarSection from "./sections/CalendarSection"
 import TranscriptsSection from "./sections/TranscriptsSection"
-import DcfSection from "./sections/DcfSection"
-import TitansSection from "./sections/TitansSection"
 
 function FinancePage({ title, fill, children }) {
   return (
@@ -20,10 +17,6 @@ function FinancePage({ title, fill, children }) {
       </div>
     </>
   )
-}
-
-export function InsightsPage() {
-  return <InsightsSection />
 }
 
 export function ChartingPage() {
@@ -46,22 +39,6 @@ export function TranscriptsPage() {
   return (
     <FinancePage title="Transcripts" fill>
       <TranscriptsSection />
-    </FinancePage>
-  )
-}
-
-export function DcfPage() {
-  return (
-    <FinancePage title="DCF Calculator">
-      <DcfSection />
-    </FinancePage>
-  )
-}
-
-export function TitansPage() {
-  return (
-    <FinancePage title="Titans">
-      <TitansSection />
     </FinancePage>
   )
 }

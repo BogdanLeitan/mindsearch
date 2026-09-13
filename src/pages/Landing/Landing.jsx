@@ -12,7 +12,7 @@ export default function Landing() {
         </Link>
         <nav className="lp-links">
           <a href="#product">Product</a>
-          <Link to="/finance">Finance</Link>
+          <Link to="/charting">Finance</Link>
           <a href="#open-source">Open source</a>
         </nav>
         <div className="lp-nav-right">
@@ -159,7 +159,7 @@ export default function Landing() {
                   <i /><i /><i /><i />
                 </aside>
                 <div className="lp-mini-main">
-                  <div className="lp-mini-head"><b>Insights</b><span className="on">Companies</span><span>Watchlist</span></div>
+                  <div className="lp-mini-head"><b>Charting</b><span className="on">NVDA</span><span>Watchlist</span></div>
                   <div className="lp-co-grid">
                     <div className="lp-co">
                       <em>NV</em>
@@ -218,7 +218,7 @@ export default function Landing() {
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>
             </span>
             <h3>Finance, in the same shell</h3>
-            <p>Insights, charts, transcripts, and a DCF — markets next to search, without leaving the page.</p>
+            <p>Charts, transcripts, and earnings — markets next to search, without leaving the page.</p>
           </article>
         </section>
 
@@ -282,7 +282,7 @@ export default function Landing() {
                   <i /><i /><i /><i />
                 </aside>
                 <div className="lp-mini-main">
-                  <div className="lp-mini-head"><b>Insights</b><span className="on">Companies</span><span>Watchlist</span></div>
+                  <div className="lp-mini-head"><b>Charting</b><span className="on">NVDA</span><span>Watchlist</span></div>
                   <div className="lp-co-grid">
                     <div className="lp-co">
                       <em>NV</em>
@@ -327,7 +327,7 @@ export default function Landing() {
           <p>Chartum is built in the open — a light AI search engine you can read, fork, and reshape.</p>
           <div className="lp-oss-cta">
             <Link className="lp-cta" to="/">Launch Chartum <span>→</span></Link>
-            <Link className="lp-cta ghost" to="/finance">Open Finance</Link>
+            <Link className="lp-cta ghost" to="/charting">Open Finance</Link>
           </div>
         </section>
       </main>
@@ -354,12 +354,12 @@ export default function Landing() {
               <strong>Product</strong>
               <Link to="/">New chat</Link>
               <Link to="/discover">Discover</Link>
-              <Link to="/finance">Finance</Link>
+              <Link to="/charting">Finance</Link>
               <Link to="/settings">Settings</Link>
             </div>
             <div>
               <strong>Finance</strong>
-              <Link to="/finance">Hub</Link>
+              <Link to="/charting">Hub</Link>
               <Link to="/discover">Discover</Link>
             </div>
             <div>
@@ -375,7 +375,7 @@ export default function Landing() {
           <span>© 2026 Chartum. Built in the open.</span>
           <div className="lp-foot-bar-links">
             <a href="#product">Product</a>
-            <Link to="/finance">Finance</Link>
+            <Link to="/charting">Finance</Link>
             <a href="#open-source">Source</a>
           </div>
         </div>

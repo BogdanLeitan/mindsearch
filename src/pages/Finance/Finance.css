@@ -1,7 +1,5 @@
-@import "./insights-legacy.css";
 @import "./tools-legacy.css";
 @import "./charting.css";
-@import "./dcf.css";
 
 .finance-head {
   justify-content: flex-start;

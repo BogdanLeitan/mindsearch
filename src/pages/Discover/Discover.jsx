@@ -246,50 +246,6 @@ export default function Discover() {
 
           </div>
 
-          <aside className="disc-rail">
-            <section className="disc-mkt">
-              <div className="disc-mkt-item">
-                <input className="disc-mkt-radio" type="radio" name="disc-mkt" id="mkt-btc" defaultChecked />
-                <label htmlFor="mkt-btc">Bitcoin consolidates near $7,300 in a choppy range<span className="disc-mkt-chev"></span></label>
-                <p>BTC is essentially flat after a wild intraday swing that ultimately netted just a 0.2% move. Price is pinned between nearby support and resistance, with the broader uptrend intact but short-term momentum stalled.</p>
-              </div>
-              <div className="disc-mkt-item">
-                <input className="disc-mkt-radio" type="radio" name="disc-mkt" id="mkt-res" />
-                <label htmlFor="mkt-res">Rising exchange reserves cap Bitcoin's upside<span className="disc-mkt-chev"></span></label>
-                <p>Coins moving back onto exchanges usually precede supply. Until that flow reverses, rallies keep meeting sellers rather than a clean breakout.</p>
-              </div>
-              <div className="disc-mkt-item">
-                <input className="disc-mkt-radio" type="radio" name="disc-mkt" id="mkt-fed" />
-                <label htmlFor="mkt-fed">Fed rate hike odds surge ahead of September 16 FOMC meeting<span className="disc-mkt-chev"></span></label>
-                <p>Futures have repriced the September meeting after sticky services data. A hold is still the base case; the tail is a hawkish surprise, not a cut.</p>
-              </div>
-              <div className="disc-mkt-item">
-                <input className="disc-mkt-radio" type="radio" name="disc-mkt" id="mkt-oil" />
-                <label htmlFor="mkt-oil">Crude oil sinks over 2% as Chevron flags rising risk<span className="disc-mkt-chev"></span></label>
-                <p>Oil gave back more than 2% after OPEC+ chatter on extra barrels and a cautious tone from producers. Energy stays a drag on the commodity book.</p>
-              </div>
-              <div className="disc-mkt-item">
-                <input className="disc-mkt-radio" type="radio" name="disc-mkt" id="mkt-eur" />
-                <label htmlFor="mkt-eur">Euro slips despite ECB rate hike<span className="disc-mkt-chev"></span></label>
-                <p>The currency faded after the print. Growth in the euro area is still the problem; a hawkish ECB does not fix a weak demand tape.</p>
-              </div>
-              <div className="disc-mkt-item">
-                <input className="disc-mkt-radio" type="radio" name="disc-mkt" id="mkt-bond" />
-                <label htmlFor="mkt-bond">Bond yields and consumer sentiment add to cautious tone<span className="disc-mkt-chev"></span></label>
-                <p>Long rates firmed as households pulled back. That mix is why risk assets are chopping instead of trending: the discount rate is not helping.</p>
-              </div>
-              <div className="disc-mkt-item">
-                <input className="disc-mkt-radio" type="radio" name="disc-mkt" id="mkt-sent" />
-                <label htmlFor="mkt-sent">Bitcoin sentiment diverges from price action<span className="disc-mkt-chev"></span></label>
-                <p>Positioning is still crowded even as spot goes nowhere. That gap usually resolves with a flush, not a quiet grind higher.</p>
-              </div>
-              <div className="disc-mkt-src">
-                <span className="src-stack"><span className="favicon f-dark">B</span><span className="favicon f-orange">R</span><span className="favicon f-teal">F</span></span>
-                25 sources
-              </div>
-            </section>
-          </aside>
-
           <div className="disc-saved">
             <div className="disc-saved-empty">
               <p>No saved stories</p>
