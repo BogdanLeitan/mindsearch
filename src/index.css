@@ -282,6 +282,11 @@ html:has(#theme-light:checked) ::selection {
   transition: width .18s ease, padding .18s ease;
 }
 
+.svg-icon {
+  width: 20px;
+  height: 20px;
+}
+
 .sidebar-collapse-cb,
 .theme-cb,
 .ui-radio {
@@ -319,6 +324,7 @@ html:has(#theme-light:checked) ::selection {
 }
 .brand-mark {
   color: color-mix(in srgb, var(--text-1) 42%, var(--text-2));
+  transition: opacity .15s ease;
 }
 
 .brand-tools {
@@ -902,7 +908,7 @@ html.sidebar-collapsed .user-meta,
 }
 
 /* ============================================================
-   MAIN HEADER TOOLS — incognito + menu (top right); panel toggle (left, collapsed)
+   MAIN HEADER TOOLS — incognito + menu (top right)
    ============================================================ */
 .head-tools {
   display: flex;
@@ -932,13 +938,9 @@ html.sidebar-collapsed .user-meta,
   border-color: var(--border-strong);
 }
 
+/* Old header sidebar toggle — no longer used; expand is on the logo now */
 .header-sidebar-toggle {
-  display: none;
-}
-
-html.sidebar-collapsed .header-sidebar-toggle,
-.app:has(.sidebar-collapse-cb:checked) .header-sidebar-toggle {
-  display: flex;
+  display: none !important;
 }
 
 .home-head {
@@ -953,4 +955,59 @@ html.sidebar-collapsed .header-sidebar-toggle,
 
 .page-head .header-sidebar-toggle {
   margin-right: 8px;
+}
+
+/* ============================================================
+   BRAND LOGO WRAP — Perplexity-style expand on hover
+   ============================================================ */
+.brand-logo-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  transition: background .15s ease;
+}
+
+html.sidebar-collapsed .brand-logo-wrap:hover,
+.sidebar:has(.sidebar-collapse-cb:checked) .brand-logo-wrap:hover {
+  background: var(--ink-faint-hover);
+}
+
+.brand-toggle-overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--text-3);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .15s ease, color .12s ease;
+}
+
+/* Only show the overlay when sidebar IS collapsed */
+html.sidebar-collapsed .brand-toggle-overlay,
+.sidebar:has(.sidebar-collapse-cb:checked) .brand-toggle-overlay {
+  display: flex;
+}
+
+/* Reveal on hover — logo fades out, toggle fades in */
+html.sidebar-collapsed .brand-logo-wrap:hover .brand-mark,
+.sidebar:has(.sidebar-collapse-cb:checked) .brand-logo-wrap:hover .brand-mark {
+  opacity: 0;
+}
+
+html.sidebar-collapsed .brand-logo-wrap:hover .brand-toggle-overlay,
+.sidebar:has(.sidebar-collapse-cb:checked) .brand-logo-wrap:hover .brand-toggle-overlay {
+  opacity: 1;
+}
+
+html.sidebar-collapsed .brand-logo-wrap:hover .brand-toggle-overlay:hover,
+.sidebar:has(.sidebar-collapse-cb:checked) .brand-logo-wrap:hover .brand-toggle-overlay:hover {
+  color: var(--text-1);
 }

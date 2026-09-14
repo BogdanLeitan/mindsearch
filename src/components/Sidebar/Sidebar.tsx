@@ -12,20 +12,28 @@ function Sidebar() {
         <input type="radio" name="theme" id="theme-system" className="theme-cb" />
 
         <div className="brand-row">
-          <Link className="brand" to="/" aria-label="MindSearch">
-            <svg className="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-              <g transform="translate(32 32)" fill="currentColor">
-                <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" />
-                <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(45)" />
-                <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(90)" />
-                <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(135)" />
-                <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(180)" />
-                <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(225)" />
-                <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(270)" />
-                <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(315)" />
-              </g>
-            </svg>
-          </Link>
+          <div className="brand-logo-wrap">
+            <Link className="brand" to="/" aria-label="MindSearch">
+              <svg className="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <g transform="translate(32 32)" fill="currentColor">
+                  <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" />
+                  <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(45)" />
+                  <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(90)" />
+                  <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(135)" />
+                  <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(180)" />
+                  <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(225)" />
+                  <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(270)" />
+                  <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(315)" />
+                </g>
+              </svg>
+            </Link>
+            <label className="brand-toggle-overlay" htmlFor="sidebar-collapsed" title="Expand sidebar">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="3" />
+                <line x1="9" y1="3" x2="9" y2="21" />
+              </svg>
+            </label>
+          </div>
 
           <div className="brand-tools">
             <button className="icon-btn" type="button" title="Search">
