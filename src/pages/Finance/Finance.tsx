@@ -1,9 +1,16 @@
+import type { ReactNode } from "react"
 import "./Finance.css"
 import ChartingSection from "./sections/ChartingSection"
 import CalendarSection from "./sections/CalendarSection"
 import TranscriptsSection from "./sections/TranscriptsSection"
 
-function FinancePage({ title, fill, children }) {
+type FinancePageProps = {
+  title: string
+  fill?: boolean
+  children: ReactNode
+}
+
+function FinancePage({ title, fill, children }: FinancePageProps) {
   return (
     <>
       <header className="page-head finance-head">

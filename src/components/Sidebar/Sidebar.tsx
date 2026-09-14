@@ -68,7 +68,7 @@ function Sidebar() {
             Discover
           </Link>
 
-          <NavLink className={({ isActive }) => isActive ? "side-item active" : "side-item"} to="/charting" title="Charting">
+          <NavLink className={({ isActive }) => (isActive ? "side-item active" : "side-item")} to="/charting" title="Charting">
             <span className="side-ico">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="3 17 9 11 13 15 21 7" />
@@ -78,7 +78,7 @@ function Sidebar() {
             Charting
           </NavLink>
 
-          <NavLink className={({ isActive }) => isActive ? "side-item active" : "side-item"} to="/calendar" title="Calendar">
+          <NavLink className={({ isActive }) => (isActive ? "side-item active" : "side-item")} to="/calendar" title="Calendar">
             <span className="side-ico">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3.4" y="4.6" width="17.2" height="16" rx="2.2" />
@@ -88,7 +88,7 @@ function Sidebar() {
             Calendar
           </NavLink>
 
-          <NavLink className={({ isActive }) => isActive ? "side-item active" : "side-item"} to="/transcripts" title="Transcripts">
+          <NavLink className={({ isActive }) => (isActive ? "side-item active" : "side-item")} to="/transcripts" title="Transcripts">
             <span className="side-ico">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M7 3.6h7.2L20 9.4v11a1.6 1.6 0 0 1-1.6 1.6H7A1.6 1.6 0 0 1 5.4 20.4V5.2A1.6 1.6 0 0 1 7 3.6z" />
