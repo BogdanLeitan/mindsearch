@@ -26,6 +26,7 @@ function Sidebar() {
               </g>
             </svg>
           </Link>
+
           <div className="brand-tools">
             <button className="icon-btn" type="button" title="Search">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round">

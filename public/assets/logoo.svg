@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <!-- MindSearch: 8-petal spark  outline-only copy of mindsearch-logo.svg -->
+  <g
+    transform="translate(32 32)"
+    fill="none"
+    stroke="#c2beb6"
+    stroke-width="1.35"
+    stroke-linejoin="round"
+  >
+    <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35"/>
+    <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(45)"/>
+    <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(90)"/>
+    <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(135)"/>
+    <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(180)"/>
+    <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(225)"/>
+    <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(270)"/>
+    <ellipse cx="0" cy="-17.2" rx="5.15" ry="13.35" transform="rotate(315)"/>
+  </g>
+</svg>

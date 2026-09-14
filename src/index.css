@@ -64,7 +64,7 @@ ol {
 :root {
   --bg-page: #1a1918;
   --bg-deep: #151413;
-  --bg-card: #211f1d;
+  --bg-card: #1f1d1c;
   --bg-card-hover: #262422;
   --bg-input: #232120;
   --bg-pill: #2b2927;
@@ -269,7 +269,7 @@ html:has(#theme-light:checked) ::selection {
    SIDEBAR
    ============================================================ */
 .sidebar {
-  --sidebar-width: 264px;
+  --sidebar-width: 244px;
   width: var(--sidebar-width);
   flex-shrink: 0;
   background: var(--bg-deep);

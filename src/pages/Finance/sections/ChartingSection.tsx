@@ -1,44 +1,6 @@
 export default function ChartingSection() {
   return (
     <div className="cb-page">
-      <input type="checkbox" id="cb-desc" className="cb-radio" />
-      <input type="checkbox" id="cb-presets" className="cb-radio" />
-      <input type="checkbox" id="cb-saved" className="cb-radio" />
-      <input type="checkbox" id="cb-pick-stk" className="cb-radio" />
-      <input type="checkbox" id="cb-pick-met" className="cb-radio" />
-      <input type="checkbox" id="cb-full" className="cb-radio" />
-
-      <input type="checkbox" id="cb-stk-nvda" className="cb-radio cb-stk-cb" />
-      <input type="checkbox" id="cb-stk-aapl" className="cb-radio cb-stk-cb" />
-      <input type="checkbox" id="cb-stk-msft" className="cb-radio cb-stk-cb" />
-      <input type="checkbox" id="cb-stk-amzn" className="cb-radio cb-stk-cb" />
-      <input type="checkbox" id="cb-stk-googl" className="cb-radio cb-stk-cb" />
-      <input type="checkbox" id="cb-stk-meta" className="cb-radio cb-stk-cb" />
-      <input type="checkbox" id="cb-stk-avgo" className="cb-radio cb-stk-cb" />
-      <input type="checkbox" id="cb-stk-tsm" className="cb-radio cb-stk-cb" />
-
-      <input type="radio" name="cb-met" id="cb-met-none" className="cb-radio cb-met-radio" defaultChecked />
-      <input type="radio" name="cb-met" id="cb-met-rev" className="cb-radio cb-met-radio" />
-      <input type="radio" name="cb-met" id="cb-met-eps" className="cb-radio cb-met-radio" />
-      <input type="radio" name="cb-met" id="cb-met-fcf" className="cb-radio cb-met-radio" />
-      <input type="radio" name="cb-met" id="cb-met-gm" className="cb-radio cb-met-radio" />
-      <input type="radio" name="cb-met" id="cb-met-oi" className="cb-radio cb-met-radio" />
-
-      <input type="radio" name="cb-per" id="cb-per-ann" className="cb-radio" defaultChecked />
-      <input type="radio" name="cb-per" id="cb-per-q" className="cb-radio" />
-      <input type="radio" name="cb-per" id="cb-per-ttm" className="cb-radio" />
-
-      <input type="radio" name="cb-rng" id="cb-rng-1y" className="cb-radio" />
-      <input type="radio" name="cb-rng" id="cb-rng-3y" className="cb-radio" />
-      <input type="radio" name="cb-rng" id="cb-rng-5y" className="cb-radio" defaultChecked />
-      <input type="radio" name="cb-rng" id="cb-rng-10y" className="cb-radio" />
-      <input type="radio" name="cb-rng" id="cb-rng-max" className="cb-radio" />
-
-      <input type="radio" name="cb-scale" id="cb-scale-none" className="cb-radio" defaultChecked />
-      <input type="radio" name="cb-scale" id="cb-scale-idx" className="cb-radio" />
-      <input type="radio" name="cb-scale" id="cb-scale-pct" className="cb-radio" />
-      <input type="radio" name="cb-scale" id="cb-scale-log" className="cb-radio" />
-
       <div className="cb-inner">
         <div className="cb-head">
           <div className="cb-head-left">
@@ -314,6 +276,280 @@ export default function ChartingSection() {
             </div>
           </div>
         </div>
+
+        <input id="cb-stmt-toggle" className="cb-radio" type="checkbox" />
+        <section className="cb-stmt">
+          <label className="cb-stmt-bar" htmlFor="cb-stmt-toggle">
+            <span className="cb-stmt-title cb-stmt-title-is">Metrics</span>
+
+            <div className="rigth-side">
+              <span className="cb-stmt-count">Details</span>
+            <svg className="cb-stmt-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+            </div>
+          </label>
+
+          <div className="cb-stmt-panel">
+            <input className="cb-radio" type="radio" name="cb-stmt-view" id="cb-stmt-is" defaultChecked />
+            <input className="cb-radio" type="radio" name="cb-stmt-view" id="cb-stmt-bs" />
+            <input className="cb-radio" type="radio" name="cb-stmt-view" id="cb-stmt-cf" />
+            <input className="cb-radio" type="radio" name="cb-stmt-view" id="cb-stmt-kpi" />
+
+            <div className="cb-stmt-tabs">
+              <label className="active" htmlFor="cb-stmt-is">Income Statement</label>
+              <label htmlFor="cb-stmt-bs">Balance Sheet</label>
+              <label htmlFor="cb-stmt-cf">Cash Flow</label>
+              <label htmlFor="cb-stmt-kpi">Segments &amp; KPIs</label>
+            </div>
+
+            <div className="cb-stmt-wrap">
+              <div className="cb-stmt-view cb-is-view">
+                
+                <table className="cb-stmt-table">
+                  <thead>
+                    <tr className="title-table">
+                      <th>Revenue</th>
+                      <th>LTM</th>
+                      <th>Dec ’25</th>
+                      <th>Dec ’24</th>
+                      <th>Dec ’23</th>
+                      <th>Dec ’22</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Total Revenues</span>
+                        </label>
+                      </td>
+                      <td>228,247</td>
+                      <td>200,966</td>
+                      <td>164,501</td>
+                      <td>134,902</td>
+                      <td>116,609</td>
+                    </tr>
+                    <tr className="cb-stmt-sub">
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Total Revenues %Chg</span>
+                        </label>
+                      </td>
+                      <td>22.7%</td>
+                      <td>21.9%</td>
+                      <td>21.9%</td>
+                      <td>15.7%</td>
+                      <td className="neg">−1.1%</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table className="cb-stmt-table">
+                  <thead>
+                    <tr className="title-table">
+                      <th>Gross Profit</th>
+                      <th>LTM</th>
+                      <th>Dec ’25</th>
+                      <th>Dec ’24</th>
+                      <th>Dec ’23</th>
+                      <th>Dec ’22</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Cost of Sales</span>
+                        </label>
+                      </td>
+                      <td>41,660</td>
+                      <td>36,175</td>
+                      <td>30,161</td>
+                      <td>25,959</td>
+                      <td>25,249</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Gross Profit</span>
+                        </label>
+                      </td>
+                      <td>186,587</td>
+                      <td>164,791</td>
+                      <td>134,340</td>
+                      <td>108,943</td>
+                      <td>91,360</td>
+                    </tr>
+                    <tr className="cb-stmt-sub">
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Gross Profit Margin</span>
+                        </label>
+                      </td>
+                      <td>81.7%</td>
+                      <td>82.0%</td>
+                      <td>81.7%</td>
+                      <td>80.8%</td>
+                      <td>78.3%</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table className="cb-stmt-table">
+                  <thead>
+                    <tr className="title-table">
+                      <th>Operating Expenses</th>
+                      <th>LTM</th>
+                      <th>Dec ’25</th>
+                      <th>Dec ’24</th>
+                      <th>Dec ’23</th>
+                      <th>Dec ’22</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Research &amp; Development</span>
+                        </label>
+                      </td>
+                      <td>71,634</td>
+                      <td>57,372</td>
+                      <td>43,873</td>
+                      <td>38,483</td>
+                      <td>35,338</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Selling, General &amp; Administrative</span>
+                        </label>
+                      </td>
+                      <td>28,026</td>
+                      <td>24,143</td>
+                      <td>21,087</td>
+                      <td>23,709</td>
+                      <td>27,078</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table className="cb-stmt-table">
+                  <thead>
+                    <tr className="title-table">
+                      <th>EBIT</th>
+                      <th>LTM</th>
+                      <th>Dec ’25</th>
+                      <th>Dec ’24</th>
+                      <th>Dec ’23</th>
+                      <th>Dec ’22</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="cb-stmt-hl">
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Operating Profit</span>
+                        </label>
+                      </td>
+                      <td>86,927</td>
+                      <td>83,276</td>
+                      <td>69,380</td>
+                      <td>46,751</td>
+                      <td>28,944</td>
+                    </tr>
+                    <tr className="cb-stmt-sub">
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Operating Margin</span>
+                        </label>
+                      </td>
+                      <td>38.1%</td>
+                      <td>41.4%</td>
+                      <td>42.2%</td>
+                      <td>34.7%</td>
+                      <td>24.8%</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table className="cb-stmt-table">
+                  <thead>
+                    <tr className="title-table">
+                      <th>Earnings</th>
+                      <th>LTM</th>
+                      <th>Dec ’25</th>
+                      <th>Dec ’24</th>
+                      <th>Dec ’23</th>
+                      <th>Dec ’22</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Income Before Taxes</span>
+                        </label>
+                      </td>
+                      <td>87,525</td>
+                      <td>85,932</td>
+                      <td>70,663</td>
+                      <td>47,428</td>
+                      <td>28,819</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Net Income</span>
+                        </label>
+                      </td>
+                      <td>68,098</td>
+                      <td>60,458</td>
+                      <td>62,360</td>
+                      <td>39,098</td>
+                      <td>23,200</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label className="cb-stmt-metric">
+                          <input type="checkbox" />
+                          <i />
+                          <span className="metric-name">Diluted EPS</span>
+                        </label>
+                      </td>
+                      <td>26.55</td>
+                      <td>23.49</td>
+                      <td>23.86</td>
+                      <td>14.87</td>
+                      <td>8.59</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   )
